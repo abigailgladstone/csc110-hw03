@@ -22,6 +22,7 @@ def read_five_ints():
     and if the input converted to int is outside of [0,10], prints
     "Error in read_five_ints: input integer outside of range".
     """
+    """ this lets the user input 5 digits, and if they are not digits, the code ends"""
     
     for idx in range ( len(grades) ):
         
@@ -31,9 +32,10 @@ def read_five_ints():
         # check if the int is not in the interval [0 to 10] print error
         # add the int to grades at index idx
         in_str = input("give me the next grade in [0 to 10]:")
-
+#checks to make sure a digit is given
         if in_str.isdigit():
             num = int(in_str)
+            #nested if statement allows to sub check the variable
             if 0<= num <= 10:
                 grades[idx] = num
             else:
@@ -59,9 +61,11 @@ def pick_averaging_method():
     Any other input prints
     'Error in pick_averaging_method: incorrect option picked'.
     """
+    """ this lets the user pick how they will be averaging the inputs, it also will end the code if an incorrect inout is given"""
     word = input(" pick 'a' for mean, 'b' for median, and 'c' for mode: ")
     if word == "a":
         print("picked: Mean")
+        #this is imported at the top of the code
         avg = statistics.mean(grades)
         return avg
     elif word == "b":
@@ -75,7 +79,7 @@ def pick_averaging_method():
     else:
         print("Error in pick_averaging_method: incorrect option picked")
         exit()
-    
+    #this will happen when the user doesnt follow directions
 
 # Task 3:
 #  Complete the function "pick_visualization" below:
@@ -88,10 +92,11 @@ def pick_visualization(average):
     Any other input prints
     'Error in pick_visualization: incorrect option picked'.
     """
+    """ lets the user pick how they want their inputs displayed, but if an incorrect input is given the code ends."""
     pick = input(" pick '1' for print average, or '2' for plot average")
-    if pick == "1":
-        print_list_average(average)
-    elif pick == "2":
+    if pick == "1": #must include quotations or it will not work correctly"
+        print_list_and_average(average)
+    elif pick == "2": #need the elif because there are 3 options available for the input
         plot_grades(average)
     else:
         print("Error in pick_visualization: incorrect option picked")
