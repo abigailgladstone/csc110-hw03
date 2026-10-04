@@ -64,16 +64,16 @@ def pick_averaging_method():
     """ this lets the user pick how they will be averaging the inputs, it also will end the code if an incorrect inout is given"""
     word = input(" pick 'a' for mean, 'b' for median, and 'c' for mode: ")
     if word == "a":
-        print("Picked: Mean")
+        print("picked: Mean")
         #this is imported at the top of the code
         avg = statistics.mean(grades)
         return avg
     elif word == "b":
-        print("Picked: Median")
+        print("picked: Median")
         avg = statistics.median(grades)
         return avg
     elif word == "c":
-        print("Picked: Mode")
+        print("picked: Mode")
         avg = statistics.mode(grades)
         return avg
     else:
